@@ -1,0 +1,21 @@
+<table>
+    <thead>
+        <tr>
+            <th>Aluminium Price</th>
+            <th>Last Fetched</th>
+            <th>Polyvinyl Chloride Futures</th>
+            <th>Last Fetched</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for data in combined_data %}
+            <tr>
+                <td>{{ data.alumin.aluminium_price }}</td>
+                <td>{{ data.alumin.last_time }}</td>
+                <td>{{ data.pvc.pvc_futures_price }}</td>
+                <td>{{ data.pvc.last_time }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'download_excel' %}" class="btn btn-success">Download Excel</a>
